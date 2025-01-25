@@ -5,3 +5,8 @@ class FetchWeather extends WeatherEvent {
 
   FetchWeather(this.address);
 }
+
+class ChangeDay extends WeatherEvent {
+  final String day;
+  ChangeDay({required this.day});
+}

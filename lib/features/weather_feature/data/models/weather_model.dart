@@ -1,16 +1,12 @@
 class WeatherModel {
-  final String description;
-  final double temperature;
+  final List<dynamic> days;
   final String resolvedAddress;
-  WeatherModel(
-      {required this.resolvedAddress,
-      required this.description,
-      required this.temperature});
+
+  WeatherModel({required this.days, required this.resolvedAddress});
 
   factory WeatherModel.fromJson(Map<String, dynamic> json) {
     return WeatherModel(
-      description: json['description'],
-      temperature: json['days']['temp'],
+      days: json['days'],
       resolvedAddress: json['resolvedAddress'],
     );
   }

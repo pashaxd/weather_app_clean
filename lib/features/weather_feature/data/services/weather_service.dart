@@ -11,14 +11,9 @@ class WeatherService {
 
     response = await _dio.get(api.apiUrl);
     final data = response.data;
-    final temperature = data['days'][0]['temp'];
 
-    final weatherDescription = data['description'];
     final resolvedAddress = data['resolvedAddress'];
-    return WeatherModel(
-      resolvedAddress: resolvedAddress,
-      temperature: temperature,
-      description: weatherDescription,
-    );
+    final days = data['days'];
+    return WeatherModel(days: days, resolvedAddress: resolvedAddress);
   }
 }

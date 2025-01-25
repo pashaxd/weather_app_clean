@@ -8,8 +8,9 @@ class WeatherLoading extends WeatherState {}
 
 class WeatherLoaded extends WeatherState {
   final WeatherModel weather;
+  final String selectedDay;
 
-  WeatherLoaded(this.weather);
+  WeatherLoaded(this.weather, this.selectedDay);
 }
 
 class WeatherError extends WeatherState {
