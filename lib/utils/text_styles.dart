@@ -18,6 +18,11 @@ class TextStyles {
     fontWeight: FontWeight.w500,
     color: Colors.white,
   );
+  static TextStyle defaultHeadMiniStyle = TextStyle(
+    fontSize: 35,
+    fontWeight: FontWeight.w400,
+    color: Colors.white,
+  );
   static TextStyle defaultBottomStyle = TextStyle(
     fontSize: 15,
     fontWeight: FontWeight.w300,

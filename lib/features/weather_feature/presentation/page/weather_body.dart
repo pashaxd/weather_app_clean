@@ -60,20 +60,36 @@ class _WeatherBodyState extends State<WeatherBody> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           ElevatedButton(
+                            style: ButtonStyle(
+                                backgroundColor: WidgetStatePropertyAll<Color>(
+                                    state.selectedDay == 'today'
+                                        ? Colors.grey
+                                        : Colors.green)),
                             onPressed: () {
                               context
                                   .read<WeatherBloc>()
                                   .add(ChangeDay(day: 'today'));
                             },
-                            child: Text('Сегодня'),
+                            child: Text(
+                              'Сегодня',
+                              style: TextStyles.defaultBottomStyle,
+                            ),
                           ),
                           ElevatedButton(
+                            style: ButtonStyle(
+                                backgroundColor: WidgetStatePropertyAll<Color>(
+                                    state.selectedDay == 'tomorrow'
+                                        ? Colors.grey
+                                        : Colors.green)),
                             onPressed: () {
                               context
                                   .read<WeatherBloc>()
                                   .add(ChangeDay(day: 'tomorrow'));
                             },
-                            child: Text('Завтра'),
+                            child: Text(
+                              'Завтра',
+                              style: TextStyles.defaultBottomStyle,
+                            ),
                           ),
                           ElevatedButton(
                             onPressed: () {
@@ -81,7 +97,15 @@ class _WeatherBodyState extends State<WeatherBody> {
                                   .read<WeatherBloc>()
                                   .add(ChangeDay(day: 'next7days'));
                             },
-                            child: Text('Следующие 7 дней'),
+                            style: ButtonStyle(
+                                backgroundColor: WidgetStatePropertyAll<Color>(
+                                    state.selectedDay == 'next7days'
+                                        ? Colors.grey
+                                        : Colors.green)),
+                            child: Text(
+                              'Следующие 7 дней',
+                              style: TextStyles.defaultBottomStyle,
+                            ),
                           ),
                         ],
                       ),
@@ -140,6 +164,7 @@ class _WeatherBodyState extends State<WeatherBody> {
                 borderRadius: BorderRadius.circular(25),
               ),
               child: TextField(
+                style: TextStyles.defaultStyle,
                 decoration: InputDecoration(
                   border: InputBorder.none,
                   hintText: 'Enter your city',

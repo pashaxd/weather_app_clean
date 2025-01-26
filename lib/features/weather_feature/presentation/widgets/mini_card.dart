@@ -9,7 +9,7 @@ class MiniCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10),
+      padding: EdgeInsets.only(top: 10, left: 10, right: 5),
       decoration: BoxDecoration(
           color: Color(0xFF4d4f6c), borderRadius: BorderRadius.circular(20)),
       width: MediaQuery.of(context).size.width * 0.4,
@@ -23,7 +23,7 @@ class MiniCard extends StatelessWidget {
           ),
           Text(
             description,
-            style: TextStyles.defaultBottom2Style,
+            style: TextStyles.defaultHeadMiniStyle,
           )
         ],
       ),
