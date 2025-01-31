@@ -19,7 +19,7 @@ class BigCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: 20, top: 20, bottom: 40, right: 5),
+      padding: EdgeInsets.only(left: 20, top: 20, bottom: 30, right: 5),
       width: MediaQuery.of(context).size.width * 0.85,
       height: MediaQuery.of(context).size.height * 0.28,
       decoration: BoxDecoration(
